@@ -1,5 +1,5 @@
 const express = require('express')
-const app = express()
+const app = express()  // server created
 const cors = require('cors')
 
 const mongoose = require('mongoose');

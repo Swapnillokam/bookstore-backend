@@ -32,5 +32,6 @@ const bookSchema = new mongoose.Schema({
 });
 
 const Book = mongoose.model('Book', bookSchema);
+// const Book = mongoose.model('Books', bookSchema); do not write this way because in DB it will be converted to plural and small letters (i.e books)
 
 module.exports = Book;
