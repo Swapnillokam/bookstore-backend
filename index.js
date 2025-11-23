@@ -30,9 +30,3 @@ main().then(() => console.log("Mongo DB connected succesfully")).catch(err => co
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
-
-//password
-// eyLr8fg5gFHU3TQs
-
-//connection url
-// mongodb+srv://swapnillokam29:eyLr8fg5gFHU3TQs@cluster0.875klfn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
