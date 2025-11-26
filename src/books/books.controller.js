@@ -2,9 +2,8 @@ const Book = require("./book.model");
 
 const postABook = async (req, res) => {
     try {
-        const newBook = await new Book({ ...req.body })
+        const newBook = await Book({ ...req.body })
         newBook.save();
-        console.log("req.params - ", req.params)
         res.status(200).send({ message: "Book Posted Sucessfully", book: newBook })
     } catch (error) {
         console.error("Error creating book", error)
