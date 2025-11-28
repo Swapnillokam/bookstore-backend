@@ -2,7 +2,8 @@ const express = require('express')
 const app = express()  // server created
 const cors = require('cors')
 
-const mongoose = require('mongoose');
+const connectDB = require('./src/Database/database');
+
 
 const port = process.env.PORT || 5000;
 require('dotenv').config()
@@ -28,10 +29,9 @@ app.use('/api/auth', userRoutes)
 app.use('/api/admin', adminRoutes)
 
 app.get('/', (req, res) => { res.send('Book Store server is running') })
-async function main() {
-    await mongoose.connect(process.env.DB_URL);
-
-}
-main().then(() => console.log("Mongo DB connected succesfully")).catch(err => console.log(err));
+app.use(async(req,res,next)=>{
+    await connectDB()
+    next()
+})
 
 module.export = app
