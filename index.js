@@ -27,10 +27,10 @@ app.use('/api/orders', orderRoutes)
 app.use('/api/auth', userRoutes)
 app.use('/api/admin', adminRoutes)
 
+app.get('/', (req, res) => { res.send('Book Store server is running') })
 async function main() {
     await mongoose.connect(process.env.DB_URL);
 
-    app.use('/', (req, res) => { res.send('Book Store server is running') })
 }
 main().then(() => console.log("Mongo DB connected succesfully")).catch(err => console.log(err));
 
