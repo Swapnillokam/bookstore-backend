@@ -3,8 +3,6 @@ const SECRET_KEY = process.env.JWT_SECRET_KEY
 
 const verifyAdminToken = (req, res, next) => {
     const token = req.headers['authorization']?.split(' ')[1]
-    console.log("req.headers['authorization'] - ", req.headers['authorization']);
-    console.log("token - ", token);
     
     if (!token) { return res.status(401).json({ message: 'Access Denied. No token provided' }) }
 
